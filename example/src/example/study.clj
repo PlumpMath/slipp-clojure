@@ -1,5 +1,4 @@
-(ns example.study
-  (:use compojure.core))
+(ns example.study)
 
 (defn hello [name] (str "Hello, " name))
 
