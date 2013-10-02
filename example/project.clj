@@ -10,6 +10,6 @@
                  [compojure "1.1.5"]
                  [de.ubercode.clostache/clostache "1.3.1"]
                  [mysql/mysql-connector-java "5.1.6"]]
-  :main example.jdbc)
+  :main example.core)
 
 
