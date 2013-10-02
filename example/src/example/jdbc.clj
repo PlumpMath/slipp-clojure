@@ -23,4 +23,3 @@
   (sql/with-connection db
   (sql/insert-record :example user)))
 
-(add-user {:id "foo" :pass "bar"})

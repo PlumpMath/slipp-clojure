@@ -4,8 +4,9 @@
     [compojure.route :as route]
     [ring.adapter.jetty :as jetty]
     [ring.middleware.params :as params]
+    [ring.util.response :as response]
     [clostache.parser :as clostache]
-    [example.jdbc]))
+    [example.jdbc :as jdbc]))
 
 ; Template Rendering
 (defn read-template [template-name]
@@ -18,18 +19,19 @@
 (defn index []
   (render-template "index" {:greeting "Bonjour"}))
 
-(defn form []
+(defn join-form []
   (render-template "form" {}))
 
-(defn create [title contents]
-  (render-template "create"
-     {:title title :contents contents}))
+(defn create [user]
+  (jdbc/add-user user)
+  (response/redirect "/")
+)
 
 ; Routing
 (defroutes main-routes
   (GET "/" [] (index))
-  (GET "/form" [] (form))
-  (POST "/" [title contents] (create title contents))
+  (GET "/join/form" [] (join-form))
+  (POST "/join" {user :params} (create user))
   (route/resources "/")
   (route/not-found "404 Not Found"))
 
