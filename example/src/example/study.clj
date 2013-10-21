@@ -22,9 +22,11 @@
 blue
 green
 
+(defn blank? [s] (every? #(Character/isWhitespace %) s))
 
+(blank? nil)
 
-
+(defstruct person :first-name :last-name)
 
 
 
