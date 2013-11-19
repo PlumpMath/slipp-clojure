@@ -23,8 +23,23 @@
     (is (= 1.5 (average 1.0 2))))
 )
 
-(deftest test-good-enough?
-  (testing "good enough"
-    (is (= true (good-enough? 1.414 2)))))
+(deftest test-improve-cube
+  (testing "improve cube"
+    (is (good-enough? 1.6666 (improve-cube 1.0 3)))))
 
 (run-tests)
+
+(sqrt 3)
+
+(sqrt 7)
+
+(cube-root 1.0)
+
+(cube-root 2.0)
+
+(cubic 1.2599)
+
+
+
+
+
