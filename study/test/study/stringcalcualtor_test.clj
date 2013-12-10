@@ -22,7 +22,18 @@
     (is (=  ["//;\n1;2;3" ";" "1;2;3"] (result "//;\n1;2;3"))))
   )
 
+(deftest test-enumerate-string
+  (testing "string to enumerate")
+    (is (= '("0") (enumerate-string "")))
+    (is (= '("1") (enumerate-string "1")))
+    (is (= '("1" "2") (enumerate-string "1,2")))
+    (is (= '("1" "2" "3") (enumerate-string "1,2\n3")))
+    (is (= '("1" "2" "3") (enumerate-string "//;\n1;2;3")))
+  )
+
 (run-tests)
+
+
 
 
 
