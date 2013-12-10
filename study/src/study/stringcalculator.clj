@@ -19,8 +19,7 @@
               (enumerate-string-iter (nth result-values 2) (nth result-values 1)))
           :else
             (split text (re-pattern delimeter))))
-  (enumerate-string-iter text ",|\n")
-  )
+  (enumerate-string-iter text ",|\n"))
 
 
 
